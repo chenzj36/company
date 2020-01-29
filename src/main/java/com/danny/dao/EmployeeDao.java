@@ -33,7 +33,7 @@ public class EmployeeDao {
     //主键自增，类的变量
     private static Integer initid = 1006;
 
-    //增加(修改)一个员工
+    //增加(若有id信息则为修改)一个员工
     public void save(Employee employee) {
         if(null == employee.getId()){
             employee.setId(initid++);
