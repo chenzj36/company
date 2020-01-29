@@ -1,5 +1,5 @@
 # company
-kuang SpringBoot员工管理系统
+狂神 SpringBoot员工管理系统
 参考自：https://www.cnblogs.com/hellokuangshen/p/11310178.html
 - 完整项目地址：https://github.com/chenzj36/company
 # 预备知识  
