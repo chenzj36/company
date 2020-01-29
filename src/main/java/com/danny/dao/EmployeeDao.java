@@ -30,7 +30,7 @@ public class EmployeeDao {
         employees.put(1005, new Employee(1005, "EE", "Echenzj36@live.cn", 1, new Department(105,"后勤部")));
     }
 
-    //主键自增
+    //主键自增，类的变量
     private static Integer initid = 1006;
 
     //增加(修改)一个员工
