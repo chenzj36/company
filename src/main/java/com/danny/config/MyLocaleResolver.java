@@ -19,8 +19,6 @@ public class MyLocaleResolver implements LocaleResolver {
 
         //获取请求的参数
         String language = httpServletRequest.getParameter("l");
-        //输出获取的参数
-        System.out.println("===>"+language);
 
         //如果请求的链接携带了国际化的参数，进行判断，取参数
         //用默认值赋值

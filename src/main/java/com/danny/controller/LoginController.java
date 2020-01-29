@@ -3,6 +3,7 @@ package com.danny.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -27,5 +28,11 @@ public class LoginController {
             model.addAttribute("msg","用户名或者密码错误");
             return "index";
         }
+    }
+
+    @GetMapping("/user/loginOut")
+    public String signOut(HttpSession session){
+        session.invalidate();
+        return "redirect:/main.html";
     }
 }

@@ -18,6 +18,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class MyMvcConfig implements WebMvcConfigurer {
 
+    //添加映射
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("index"); // 将url解析到name对应的/templates/name.html
@@ -25,11 +26,13 @@ public class MyMvcConfig implements WebMvcConfigurer {
         registry.addViewController("/main.html").setViewName("dashboard");
     }
 
+    //国际化message解析器注册
    @Bean  //自定义的国际化解析器，放到一个Bean中使其生效
    public LocaleResolver localeResolver(){
         return new MyLocaleResolver();
    }
 
+    //拦截器
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LoginHandlerInterceptor())

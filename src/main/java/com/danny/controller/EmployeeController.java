@@ -73,9 +73,5 @@ public class EmployeeController {
         return "redirect:/list.html";
     }
 
-    @GetMapping("/user/loginOut")
-    public String signOut(HttpSession session){
-        session.invalidate();
-        return "redirect:/main.html";
-    }
+
 }
