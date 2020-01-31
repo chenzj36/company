@@ -1,9 +1,55 @@
-# company
-狂神 SpringBoot员工管理系统
-参考自：https://www.cnblogs.com/hellokuangshen/p/11310178.html
-- 完整项目地址：https://github.com/chenzj36/company
+**完整项目（简单的“员工管理系统CRUD”）地址：** https://github.com/chenzj36/company   
+**本项目系西部开源狂神SpringBoot教程学习笔记（下附原文链接）**
+- https://blog.kuangstudy.com/index.php/archives/630/
+- https://www.cnblogs.com/hellokuangshen/tag/SpringBoot/
 # 预备知识  
 ## 简介
+### 核心思想
+- **约定大于配置**
+### 主要优点
+- 快速入门
+- 开箱即用
+- 内嵌式容器
+- 支持yaml配置  
+### 理解微服务架构
+- 英文原文：http://martinfowler.com/articles/microservices.html
+- 中文版本：https://www.cnblogs.com/liuning8023/p/4493156.html
+### 一个最简单的应用
+1. 项目结构
+![d86450d3b7f1afc7bfd75ff2665b7c80.png](en-resource://database/398:0)
+2. HelloController.class
+![0df6bbe421dc2a9f9139bd77c648164d.png](en-resource://database/400:0)
+3. 运行效果
+![81a1f4521886595f94acf918df99d374.png](en-resource://database/402:0)
+4. 项目打包成jar包：双击package即可
+![562b68711aa4556783b12e3fac9c8f82.png](en-resource://database/404:0)
+5. 运行jar包  
+java -jar jar包名
+### 自定义启动banner
+- resources目录下新建banner.txt
+- banner图形：https://www.bootschool.net/ascii
+### 再举一controller的例子
+![8a990388f9d962d3083966bec9918af2.png](en-resource://database/410:0)
+![5cdf8a721d54b1244767efd20a3db1e8.png](en-resource://database/408:0)
+### 涉及到实体类的一个项目（yaml）
+1. 项目结构
+![50c0b4b55e0ea46e60ca2419ea2e9591.png](en-resource://database/412:0)
+2. pojo
+- Dog.class
+`![c009361f8b46731282018145437b2045.png](en-resource://database/414:0)
+- Person.class
+![68acdf983d11860cee9762325d56f988.png](en-resource://database/416:0)
+3. yaml
+![89027a6e8f0b0b3f92f4314ebbaf3d11.png](en-resource://database/418:0)
+4. test
+![388db1205187ba9a9d374ce6504067db.png](en-resource://database/420:0)
+5. 运行结果（控制台打印输出）
+`Person{name='chenzj', age=23, happy=false, birth=Thu Jul 03 00:00:00 CST 1997, maps={k1=v1, k2=v2}, lists=[code, girl, music], dog=Dog{name='wangcai', age=1}}`
+6. 多环境切换（yml中配置）
+![00c6dc0df346b47b317765006f2435f9.png](en-resource://database/422:0)
+### 其余需要了解的知识
+- 松散绑定
+- JSR303数据校验
 ### 使用SpringBoot的步骤  
 1. 创建一个SpringBoot应用
 2. 选择所需的模块
@@ -16,8 +62,9 @@
 - 作用：模板引擎的作用就是我们来写一个页面模板，比如有些值呢，是动态的，我们写一些表达式。而这些值，从哪来呢，我们来组装一些数据，我们把这些数据找到。然后把这个模板和这个数据交给我们模板引擎，模板引擎按照我们这个数据帮你把这表达式解析、填充到我们指定的位置，然后把这个数据最终生成一个我们想要的内容给我们写出去  
 - 常用：freemarker Thymeleaf js
 - Thymeleaf官网：https://www.thymeleaf.org/  
-# 准备工作
-## 添加依赖
+# 员工管理系统
+## 准备工作
+### 添加依赖
 ```
 <dependency>
     <groupId>org.projectlombok</groupId>
@@ -29,7 +76,7 @@
 </dependency>
 
 ```
-## pojo包(Plain Ordinary Java Object)普通JavaBeans
+### pojo包(Plain Ordinary Java Object)普通JavaBeans
 + Department.class
 ```Java
 package com.danny.pojo;
@@ -77,7 +124,7 @@ public class Employee {
 }
 
 ```
-## dao包(Data Access Object)数据访问接口
+### dao包(Data Access Object)数据访问接口
 + DepartmentDao.class
 ```
 package com.danny.dao;
@@ -169,9 +216,9 @@ public class EmployeeDao {
 
 }
 ```  
-## 更改项目启动名  
+### 更改项目启动名  
 ` server.servlet.context-path=/chen`
-# 登录功能实现 
+## 登录功能实现 
 - MyMvcConfig.class自定义视图解析
 ```Java
 package com.danny.config;
@@ -263,9 +310,9 @@ public class LoginController {
 
 ```
 
-# 页面国际化
-## 项目所需文件
-### /resources/i18n/
+## 页面国际化
+### 项目所需文件
+#### /resources/i18n/
 > login.properties  
 > login_zh_CN.properties  
 > login_en_US.properties
@@ -280,17 +327,17 @@ login.username=用户名
 
 + html文件置于templates文件夹下  
 + css、img、js文件置于static文件夹下
-## IDEA设置properties的编码    
+### IDEA设置properties的编码    
 - Setting-->Editor-->File Encoding编码同一修改为UTF-8
-## 配置application.properties  
+### 配置application.properties  
 `spring.messages.basename=i18n.login`
-## 配置index.html
+### 配置index.html
 ```
 <!--括号里的即为HttpServletRequest-->
 <a class="btn btn-sm" th:href="@{/index.html(l='zh_CN')}">中文</a>
 <a class="btn btn-sm" th:href="@{/index.html(l='en_US')}">English</a>
 ```
-## config包下的类
+### config包下的类
 + MyLocaleResolver.class自定义国际化消息视图解析
 ```Java
 package com.danny.config;
@@ -357,13 +404,13 @@ public class MyMvcConfig implements WebMvcConfigurer {
    }
 }
 ```
-# 登录功能实现
-## 在index.html文件中添加
+## 登录功能实现
+### 在index.html文件中添加
 - 在提示下添加`<p th:text="${msg}" style="color: red" th:if="${not #strings.isEmpty(msg)}"></p>`
 - 在form标签中添加`th:action="@{/user/login}"`
 - 在input标签中添加name属性`name="username"` `name="password"`
 
-## controler包
+### controler包
 - LoginController.class
 ```Java
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -383,12 +430,12 @@ public class LoginController {
     }
 }
 ```
-## config包
+### config包
 - MyMvcConfig.class
 添加`registry.addViewController("/main.html").setViewName("dashboard");`
 
-# 拦截器
-## config包
+## 拦截器
+### config包
 - LoginHandlerInterceptor.class
 ```Java
 package com.danny.config;
@@ -423,8 +470,8 @@ public void addInterceptors(InterceptorRegistry registry) {
 }
 ```
 dashboard.html中添加`[[${session.loginUser}]]`替换MyCompany，显示登录用户名。
-# 展示员工列表
-## list.html修改列表显示部分
+## 展示员工列表
+### list.html修改列表显示部分
 ```html
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
 	<h2>员工列表</h2>
@@ -459,7 +506,7 @@ dashboard.html中添加`[[${session.loginUser}]]`替换MyCompany，显示登录�
 	</div>
 </main>
 ```
-## EmployeeController.class
+### EmployeeController.class
 ```Java
 package com.danny.controller;
 
@@ -485,11 +532,11 @@ public String list(Model model){//model携带参数给前端
 }
 
 ```
-## 侧边栏对应员工管理部分  
+### 侧边栏对应员工管理部分  
 实现选中的部分高亮  
 `<a th:class="${active=='list.html'?'nav-link active':'nav-link'}" th:href="@{/list.html}">`
 
-# 添加员工信息  
+## 添加员工信息  
 - 添加员工按钮超链接list.html  
 ```html
 <h2><a class="btn btn-sm btn-success" th:href="@{/emp}">添加员工</a></h2>
@@ -559,10 +606,10 @@ public String addEmp(Employee employee){
 spring.mvc.date-format=yyyy-mm-dd
 ```
 
-# 修改员工信息功能
-## 跳转链接设置
+## 修改员工信息功能
+### 跳转链接设置
 ` <a class="btn btn-sm btn-primary" th:href="@{/emp/}+${emp.id}">编辑</a>`
-## 跳转controller
+### 跳转controller
 ```Java
 @GetMapping("/emp/{id}")
 public String toUpdateEmp(@PathVariable("id") Integer id, Model model){
@@ -573,7 +620,7 @@ public String toUpdateEmp(@PathVariable("id") Integer id, Model model){
     return "emp/update";
 }
 ```
-## 修改员工信息页面update.html-复制list.html
+### 修改员工信息页面update.html-复制list.html
 ```html
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
 	<h2>修改员工信息</h2>
@@ -617,7 +664,7 @@ public String toUpdateEmp(@PathVariable("id") Integer id, Model model){
 	</div>
 </main>
 ```
-## 提交控制controller 
+### 提交控制controller 
 ```Java
 @PostMapping("/updateEmp")
 public String updateEmp(Employee employee){
@@ -626,10 +673,10 @@ public String updateEmp(Employee employee){
     return "redirect:/list.html";
 }
 ```
-# 删除员工
-## 编写提交地址
+## 删除员工
+### 编写提交地址
 `<a class="btn btn-sm btn-danger" th:href="@{/delEmp/}+${emp.id}">删除</a>`
-## controller
+### controller
 ```
 @GetMapping("/delEmp/{id}")
 public String delEmp(@PathVariable("id") Integer id){
@@ -637,10 +684,10 @@ public String delEmp(@PathVariable("id") Integer id){
     return "redirect:/list.html";
 }
 ```
-# 注销功能
-## 链接设置
+## 注销功能
+### 链接设置
 `<a class="nav-link" th:href="@{/user/loginOut}">Sign out</a>`
-## controller
+### controller
 ```Java
 @GetMapping("/user/loginOut")
 public String signOut(HttpSession session){
