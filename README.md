@@ -1,4 +1,4 @@
-**完整项目（简单的“员工管理系统CRUD”）地址：** https://github.com/chenzj36/company    
+**完整项目（简单的“员工管理系统CRUD”）地址：** https://github.com/chenzj36/company     
 **本项目系西部开源狂神SpringBoot教程学习笔记（下附原文链接）**
 *   https://blog.kuangstudy.com/index.php/archives/630/
 *   https://www.cnblogs.com/hellokuangshen/tag/SpringBoot/
@@ -43,18 +43,18 @@
 1.  项目结构  
     ![enter description here](http://q5053ip41.bkt.clouddn.com/xsj/1580528364444.png)
 2.  pojo
-*   Dog.class
+*   Dog.class  
     ![enter description here](http://q5053ip41.bkt.clouddn.com/xsj/1580528383563.png)
-*   Person.class
+*   Person.class  
     ![enter description here](http://q5053ip41.bkt.clouddn.com/xsj/1580528399362.png)
 
-1.  yaml
+1.  yaml  
     ![enter description here](http://q5053ip41.bkt.clouddn.com/xsj/1580528417905.png)
-2.  test
+2.  test  
     ![enter description here](http://q5053ip41.bkt.clouddn.com/xsj/1580528435499.png)
-3.  运行结果（控制台打印输出）
+3.  运行结果（控制台打印输出）  
     `Person{name='chenzj', age=23, happy=false, birth=Thu Jul 03 00:00:00 CST 1997, maps={k1=v1, k2=v2}, lists=[code, girl, music], dog=Dog{name='wangcai', age=1}}`
-4.  多环境切换（yml中配置）
+4.  多环境切换（yml中配置）  
     ![enter description here](http://q5053ip41.bkt.clouddn.com/xsj/1580528452643.png)
 
 ### 其余需要了解的知识
