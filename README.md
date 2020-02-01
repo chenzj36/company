@@ -1,57 +1,48 @@
-**完整项目（简单的“员工管理系统CRUD”）地址：** https://github.com/chenzj36/company
+**完整项目（简单的“员工管理系统CRUD”）地址：** https://github.com/chenzj36/company    
 **本项目系西部开源狂神SpringBoot教程学习笔记（下附原文链接）**
-
 *   https://blog.kuangstudy.com/index.php/archives/630/
 *   https://www.cnblogs.com/hellokuangshen/tag/SpringBoot/
 
 # 预备知识
-
 ## 简介
-
 ### 核心思想
 
 *   **约定大于配置**
 
 ### 主要优点
-
 *   快速入门
 *   开箱即用
 *   内嵌式容器
 *   支持yaml配置
 
-### 理解微服务架构
-
+### 理解微服务架构  
 *   英文原文：http://martinfowler.com/articles/microservices.html
 *   中文版本：https://www.cnblogs.com/liuning8023/p/4493156.html
 
-### 一个最简单的应用
-
-1.  项目结构
+### 一个最简单的应用  
+1.  项目结构    
     ![enter description here](http://q5053ip41.bkt.clouddn.com/xsj/1580528260993.png)
-2.  HelloController.class
+2.  HelloController.class  
     ![enter description here](http://q5053ip41.bkt.clouddn.com/xsj/1580528281240.png)
-3.  运行效果
+3.  运行效果  
    ![enter description here](http://q5053ip41.bkt.clouddn.com/xsj/1580528293649.png)
-4.  项目打包成jar包：双击package即可
+4.  项目打包成jar包：双击package即可   
     ![enter description here](http://q5053ip41.bkt.clouddn.com/xsj/1580528311565.png)
-5.  运行jar包
+5.  运行jar包   
     java -jar jar包名
 
-### 自定义启动banner
+### 自定义启动banner   
+*   resources目录下新建banner.txt  
+*   banner图形：https://www.bootschool.net/ascii  
 
-*   resources目录下新建banner.txt
-*   banner图形：https://www.bootschool.net/ascii
-
-### 再举一controller的例子
+### 再举一controller的例子  
 ![enter description here](http://q5053ip41.bkt.clouddn.com/xsj/1580528337146.png)
 ![enter description here](http://q5053ip41.bkt.clouddn.com/xsj/1580528349740.png)
 
-### 涉及到实体类的一个项目（yaml）
-
-1.  项目结构
+### 涉及到实体类的一个项目（yaml） 
+1.  项目结构  
     ![enter description here](http://q5053ip41.bkt.clouddn.com/xsj/1580528364444.png)
 2.  pojo
-
 *   Dog.class
     ![enter description here](http://q5053ip41.bkt.clouddn.com/xsj/1580528383563.png)
 *   Person.class
@@ -67,19 +58,16 @@
     ![enter description here](http://q5053ip41.bkt.clouddn.com/xsj/1580528452643.png)
 
 ### 其余需要了解的知识
-
 *   松散绑定
 *   JSR303数据校验
 
 ### 使用SpringBoot的步骤
-
 1.  创建一个SpringBoot应用
 2.  选择所需的模块
 3.  在配置文件中手动配置部分配置项目
 4.  编写业务代码
 
 ### 类的命名
-
 *   向容器中自动配置组件：___AutoConfiguration
 *   自动配置类：____Properties
 
@@ -830,5 +818,3 @@ public String signOut(HttpSession session){
     session.invalidate();
     return "redirect:/main.html";
 }
-
-```
