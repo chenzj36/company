@@ -1,15 +1,16 @@
-**完整项目（简单的“员工管理系统CRUD”）地址：** https://github.com/chenzj36/company     
+**完整项目（简单的“员工管理系统CRUD”）地址：** https://github.com/chenzj36/company
 **本项目系西部开源狂神SpringBoot教程学习笔记（下附原文链接）**
+
 *   https://blog.kuangstudy.com/index.php/archives/630/
 *   https://www.cnblogs.com/hellokuangshen/tag/SpringBoot/
 
-# 预备知识
-## 简介
-### 核心思想
+# 预备知识  
+## 简介  
+### 核心思想  
 
-*   **约定大于配置**
+*   **约定大于配置**  
 
-### 主要优点
+### 主要优点  
 *   快速入门
 *   开箱即用
 *   内嵌式容器
@@ -20,68 +21,75 @@
 *   中文版本：https://www.cnblogs.com/liuning8023/p/4493156.html
 
 ### 一个最简单的应用  
-1.  项目结构    
-    ![enter description here](http://q5053ip41.bkt.clouddn.com/xsj/1580528260993.png)
-2.  HelloController.class  
-    ![enter description here](http://q5053ip41.bkt.clouddn.com/xsj/1580528281240.png)
-3.  运行效果  
-   ![enter description here](http://q5053ip41.bkt.clouddn.com/xsj/1580528293649.png)
-4.  项目打包成jar包：双击package即可   
-    ![enter description here](http://q5053ip41.bkt.clouddn.com/xsj/1580528311565.png)
-5.  运行jar包   
+1.  项目结构
+    ![enter description here](https://aliyunosschenzj.oss-cn-beijing.aliyuncs.com/aliyunoss/1580528260993.png)
+2.  HelloController.class
+    ![enter description here](https://aliyunosschenzj.oss-cn-beijing.aliyuncs.com/aliyunoss/1580528281240.png)
+3.  运行效果
+   ![enter description here](https://aliyunosschenzj.oss-cn-beijing.aliyuncs.com/aliyunoss/1580528293649.png)
+4.  项目打包成jar包：双击package即可
+    ![enter description here](https://aliyunosschenzj.oss-cn-beijing.aliyuncs.com/aliyunoss/1580528311565.png)
+5.  运行jar包
     java -jar jar包名
 
-### 自定义启动banner   
-*   resources目录下新建banner.txt  
-*   banner图形：https://www.bootschool.net/ascii  
+### 自定义启动banner 
+*   resources目录下新建banner.txt
+*   banner图形：https://www.bootschool.net/ascii
 
 ### 再举一controller的例子  
 ![enter description here](http://q5053ip41.bkt.clouddn.com/xsj/1580528337146.png)
 ![enter description here](http://q5053ip41.bkt.clouddn.com/xsj/1580528349740.png)
 
-### 涉及到实体类的一个项目（yaml） 
-1.  项目结构  
-    ![enter description here](http://q5053ip41.bkt.clouddn.com/xsj/1580528364444.png)
+### 涉及到实体类的一个项目（yaml）  
+![enter description here](https://aliyunosschenzj.oss-cn-beijing.aliyuncs.com/aliyunoss/1580528337146.png)
+![enter description here](https://aliyunosschenzj.oss-cn-beijing.aliyuncs.com/aliyunoss/1580528349740.png)
+
+### 涉及到实体类的一个项目（yaml）  
+1.  项目结构
+    ![enter description here](https://aliyunosschenzj.oss-cn-beijing.aliyuncs.com/aliyunoss/1580528364444.png)
 2.  pojo
-*   Dog.class  
-    ![enter description here](http://q5053ip41.bkt.clouddn.com/xsj/1580528383563.png)
-*   Person.class  
-    ![enter description here](http://q5053ip41.bkt.clouddn.com/xsj/1580528399362.png)
 
-1.  yaml  
-    ![enter description here](http://q5053ip41.bkt.clouddn.com/xsj/1580528417905.png)
-2.  test  
-    ![enter description here](http://q5053ip41.bkt.clouddn.com/xsj/1580528435499.png)
-3.  运行结果（控制台打印输出）  
+*   Dog.class
+    ![enter description here](https://aliyunosschenzj.oss-cn-beijing.aliyuncs.com/aliyunoss/1580528383563.png)
+*   Person.class
+    ![enter description here](https://aliyunosschenzj.oss-cn-beijing.aliyuncs.com/aliyunoss/1580528399362.png)
+
+1.  yaml
+    ![enter description here](https://aliyunosschenzj.oss-cn-beijing.aliyuncs.com/aliyunoss/1580528417905.png)
+2.  test
+    ![enter description here](https://aliyunosschenzj.oss-cn-beijing.aliyuncs.com/aliyunoss/1580528435499.png)
+3.  运行结果（控制台打印输出）
     `Person{name='chenzj', age=23, happy=false, birth=Thu Jul 03 00:00:00 CST 1997, maps={k1=v1, k2=v2}, lists=[code, girl, music], dog=Dog{name='wangcai', age=1}}`
-4.  多环境切换（yml中配置）  
-    ![enter description here](http://q5053ip41.bkt.clouddn.com/xsj/1580528452643.png)
+4.  多环境切换（yml中配置）
+    ![enter description here](https://aliyunosschenzj.oss-cn-beijing.aliyuncs.com/aliyunoss/1580528452643.png)
 
-### 其余需要了解的知识
-*   松散绑定
-*   JSR303数据校验
+### 其余需要了解的知识  
+*   松散绑定lastName   last-name
+*   JSR303数据校验@Validated
+*   图标自定义：resources/public/favicon.ico
+*   静态资源映射：/public，/resources，/static直接访问；/templates需用controller映射（模板引擎）
 
-### 使用SpringBoot的步骤
+### 使用SpringBoot的步骤  
 1.  创建一个SpringBoot应用
 2.  选择所需的模块
 3.  在配置文件中手动配置部分配置项目
 4.  编写业务代码
 
-### 类的命名
+### 类的命名  
 *   向容器中自动配置组件：___AutoConfiguration
 *   自动配置类：____Properties
 
-### 模板引擎
+### 模板引擎  
 
 *   作用：模板引擎的作用就是我们来写一个页面模板，比如有些值呢，是动态的，我们写一些表达式。而这些值，从哪来呢，我们来组装一些数据，我们把这些数据找到。然后把这个模板和这个数据交给我们模板引擎，模板引擎按照我们这个数据帮你把这表达式解析、填充到我们指定的位置，然后把这个数据最终生成一个我们想要的内容给我们写出去
 *   常用：freemarker Thymeleaf js
 *   Thymeleaf官网：https://www.thymeleaf.org/
 
-# 员工管理系统
+# 员工管理系统  
 
-## 准备工作
+## 准备工作  
 
-### 添加依赖
+### 添加依赖  
 
 ```
 <dependency>
